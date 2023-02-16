@@ -1,0 +1,133 @@
+/*FONT*/
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
+/*RESET*/
+* {
+  padding: 0;
+  margin: 0;
+  vertical-align: baseline;
+  list-style: none;
+  border: 0;
+  font-family: "Patrick Hand", cursive;
+}
+
+/*GLOBAL*/
+:root {
+  --light-pink: #FFDDD2;
+  --medium-pink: #FFB9B9;
+  --pink: #FFACC7;
+  --dark-pink: #FF8DC7;
+  --white: #FFFFFF;
+  --fire: #FFA500;
+  --text: #524A4E;
+}
+
+/*CARD*/
+body {
+  background-color: var(--light-pink);
+}
+body .card {
+  width: 640px;
+  height: 400px;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  perspective: 1200px;
+}
+body .card:hover .outside {
+  transform: rotateY(-130deg);
+}
+body .outside, body .inside {
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  left: 50.1%;
+}
+body .inside {
+  background: linear-gradient(to right, #E0E0E0, var(--white) 25%);
+  line-height: 20px;
+  padding: 0, 20;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  left: 50%;
+}
+body .outside {
+  --webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  z-index: 1;
+  transform-origin: left;
+  transition: 2s;
+}
+body .outside .front, body .outside .back {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+body .outside .front h1, body .outside .back h1 {
+  font-size: 26px;
+  text-transform: uppercase;
+  margin-top: 30px;
+  margin-left: 10px;
+  text-align: center;
+  letter-spacing: 6px;
+  color: var(--text);
+}
+body .outside .front {
+  background-color: var(--white);
+}
+body .outside .front .cake {
+  width: 100%;
+  position: absolute;
+  bottom: 30px;
+}
+body .outside .front .cake .top-layer, body .outside .front .cake .middle-layer, body .outside .front .cake .bottom-layer {
+  height: 80px;
+  width: 240px;
+  background-repeat: repeat;
+  background-size: 60px 100px;
+  background-position: 28px 0;
+  background-image: linear-gradient(transparent 50px, var(--medium-pink) 50px, var(--medium-pink) 60px, transparent 60px), radial-gradient(circle at 30px 5px, var(--medium-pink) 30px, var(--light-pink) 31px);
+  border-radius: 10px 10px 0 0;
+  position: relative;
+  margin: auto;
+}
+body .outside .front .cake .top-layer {
+  transform: scale(0.7);
+  top: 26px;
+}
+body .outside .front .cake .middle-layer {
+  transform: scale(0.85);
+  top: 6px;
+}
+body .outside .front .cake .candle {
+  height: 45px;
+  width: 15px;
+  background: repeating-linear-gradient(45deg, var(--dark-pink) 0, var(--pink) 5px, var(--medium-pink) 5px, var(--medium-pink) 10px);
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 202px;
+}
+body .outside .front .cake .candle:before {
+  content: "";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  background-color: var(--fire);
+  border-radius: 0 50% 50% 50%;
+  bottom: 48px;
+  transform: rotate(45deg);
+  left: -1px;
+}
+body .outside .back {
+  transform: rotateY(180deg);
+  background: linear-gradient(to left, #E0E0E0, var(--white) 20%);
+}/*# sourceMappingURL=style.css.map */
